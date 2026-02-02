@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arknights: Endfield Factory Blueprints</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 16px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            color: #24292e;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 2rem;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        h1 {
+            font-size: 2em;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid #eaecef;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid #eaecef;
+            margin-top: 2em; /* Extra space for sections */
+        }
+
+        h3 {
+            font-size: 1.25em;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+            margin: 0 0 16px 0;
+        }
+
+        ul {
+            padding-left: 2em;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-top: 0.25em;
+        }
+
+        code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            margin-bottom: 16px;
+        }
+
+        pre code {
+            display: inline;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            line-height: inherit;
+            word-wrap: normal;
+            background-color: initial;
+            border: 0;
+        }
+
+        /* Copy Button Styles */
+        .code-wrapper {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .code-wrapper pre {
+            margin-bottom: 0;
+            padding-right: 70px; /* Space for the button */
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 20px;
+            color: #24292e;
+            background-color: #fafbfc;
+            border: 1px solid rgba(27, 31, 35, 0.15);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+            user-select: none;
+            -webkit-appearance: none;
+        }
+
+        .copy-btn:hover {
+            background-color: #f3f4f6;
+            border-color: rgba(27, 31, 35, 0.15);
+        }
+
+        .copy-btn:active {
+            background-color: #edeff2;
+            border-color: rgba(27, 31, 35, 0.15);
+            box-shadow: inset 0 1px 0 rgba(225, 228, 232, 0.2);
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: block;
+            width: max-content;
+            max-width: 100%;
+            overflow: auto;
+        }
+
+        table th, table td {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+
+        table th {
+            font-weight: 600;
+            background-color: #f6f8fa;
+        }
+
+        table tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+
+        img {
+            max-width: 100%;
+            box-sizing: content-box;
+            background-color: #fff;
+            border: 1px solid #dfe2e5; /* Optional border for white images */
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #e1e4e8;
+            border: 0;
+        }
+        
+        .toc ul {
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Arknights: Endfield Factory Blueprints Collection</h1>
+<p>Factory blueprints collection for material production automation.</p>
+
+<div class="toc">
+    <h2>📋 Table of Contents</h2>
+    <p><strong>Tier 1 (Basic Processing)</strong></p>
+    <ul>
+        <li><a href="#p1-obc">1. P1 O/B/C (Basic Resources)</a></li>
+        <li><a href="#p1-fa">2. P1 F/A (Basic Metals)</a></li>
+        <li><a href="#p1-plant">3. P1 PLANT (Farming Loop)</a></li>
+    </ul>
+    <p><strong>Tier 2 (Advanced Production)</strong></p>
+    <ul>
+        <li><a href="#p2-obc">4. P2 O/B/C (Advanced Resources)</a></li>
+        <li><a href="#p2-fa">5. P2 F/A (Advanced Metals)</a></li>
+        <li><a href="#p2-pwr-bc">6. P2 PWR B/C (Basic Batteries)</a></li>
+        <li><a href="#p2-amr-bc">7. P2 AMR B/C (Basic Gears)</a></li>
+        <li><a href="#p2-med-bc">8. P2 MED B/C (Basic Medical)</a></li>
+        <li><a href="#p2-bmb">9. P2 BMB (Explosives)</a></li>
+        <li><a href="#p2-pwr-a">10. P2 PWR A (High-Capacity Batteries)</a></li>
+        <li><a href="#p2-amr-a">11. P2 AMR A (Advanced Gears)</a></li>
+        <li><a href="#p2-med-a">12. P2 MED A (Advanced Medical)</a></li>
+    </ul>
+</div>
+
+<hr>
+
+<h1>Tier 1 Blueprints</h1>
+
+<h3 id="p1-obc">1. P1 O/B/C</h3>
+<blockquote>
+    <p><strong>Description:</strong> Originium/Buckflower/Citrome full transform<br>
+    <strong>Size:</strong> <code>12 x 7</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1iUIa5i37O2oI7aU4</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>originium ore</code></td><td><code>originium powder</code>, <code>origocrust</code>, <code>origocrust powder</code></td></tr>
+        <tr><td><code>buckflower</code></td><td><code>buckflower powder</code>, <code>carbon</code>, <code>carbon powder</code></td></tr>
+        <tr><td><code>citrome</code></td><td><code>citrome powder</code>, <code>carbon</code>, <code>carbon powder</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Shredding Unit</li>
+    <li>1x Refining Unit</li>
+    <li>3x Protocol Stash</li>
+    <li>1x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p1obc.png" alt="Blueprint P1 O/B/C" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p1-fa">2. P1 F/A</h3>
+<blockquote>
+    <p><strong>Description:</strong> Ferrium/Amethyst full transform<br>
+    <strong>Size:</strong> <code>17 x 8</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1ouiOaoU306EAI2eO</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>ferrium ore</code></td><td><code>ferrium</code>, <code>ferrium powder</code>, <code>ferrium bottle</code>, <code>ferrium part</code></td></tr>
+        <tr><td><code>amethyst ore</code></td><td><code>amethyst fiber</code>, <code>amethyst powder</code>, <code>amethyst bottle</code>, <code>amethyst part</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Refining Unit</li>
+    <li>1x Moulding Unit</li>
+    <li>1x Fitting Unit</li>
+    <li>4x Protocol Stash</li>
+    <li>2x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p1fa.png" alt="Blueprint P1 F/A" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p1-plant">3. P1 PLANT</h3>
+<blockquote>
+    <p><strong>Description:</strong> Buckflower/Citrome/Sandleaf plant loop<br>
+    <strong>Size:</strong> <code>11 x 12</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O19aEuU951Ae6i5uI2</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>buckflower seed</code></td><td><code>buckflower</code></td></tr>
+        <tr><td><code>citrome seed</code></td><td><code>citrome</code></td></tr>
+        <tr><td><code>sandleaf seed</code></td><td><code>sandleaf</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Planting Unit</li>
+    <li>1x Seed Picking Unit</li>
+    <li>1x Protocol Stash</li>
+    <li>1x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p1plant.png" alt="Blueprint P1 PLANT" onerror="this.style.display='none'">
+
+<hr>
+
+<h1>Tier 2 Blueprints</h1>
+
+<h3 id="p2-obc">4. P2 O/B/C</h3>
+<blockquote>
+    <p><strong>Description:</strong> Originium/Buckflower/Citrome with Sandleaf full transform<br>
+    <strong>Size:</strong> <code>18 x 8</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O101O37046Ui2eE979</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>originium ore</code> + <code>sandleaf</code></td><td><code>dense originium powder</code>, <code>dense origocrust powder</code>, <code>packed origocrust</code></td></tr>
+        <tr><td><code>buckflower</code> + <code>sandleaf</code></td><td><code>ground buckflower powder</code>, <code>dense carbon powder</code>, <code>stabilized carbon</code></td></tr>
+        <tr><td><code>citrome</code> + <code>sandleaf</code></td><td><code>ground citrome powder</code>, <code>dense carbon powder</code>, <code>stabilized carbon</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Shredding Unit</li>
+    <li>2x Refining Unit</li>
+    <li>3x Protocol Stash</li>
+    <li>2x Electric Pylon</li>
+    <li>1x Grinding Unit</li>
+</ul>
+
+<img src="pictures/p2obc.png" alt="Blueprint P2 O/B/C" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-fa">5. P2 F/A</h3>
+<blockquote>
+    <p><strong>Description:</strong> Ferrium/Amethyst with Sandleaf full transform<br>
+    <strong>Size:</strong> <code>20 x 9</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O12O9Au2a5I862eUOo</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>ferrium ore</code> + <code>sandleaf</code></td><td><code>dense ferrium powder</code>, <code>steel</code>, <code>steel part</code>, <code>steel bottle</code></td></tr>
+        <tr><td><code>amethyst ore</code> + <code>sandleaf</code></td><td><code>cryston powder</code>, <code>cryston fiber</code>, <code>cryston part</code>, <code>cryston bottle</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Refining Unit</li>
+    <li>1x Moulding Unit</li>
+    <li>1x Fitting Unit</li>
+    <li>4x Protocol Stash</li>
+    <li>2x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2fa.png" alt="Blueprint P2 F/A" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-pwr-bc">6. P2 PWR B/C</h3>
+<blockquote>
+    <p><strong>Description:</strong> LC/SC Battery production<br>
+    <strong>Size:</strong> <code>12 x 9</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1a6B6ea297A4b0e5e</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>ferrium ore</code> + <code>originium ore</code></td><td><code>SC Valley Battery</code></td></tr>
+        <tr><td><code>amethyst ore</code> + <code>originium ore</code></td><td><code>LC Valley Battery</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>1x Refining Unit</li>
+    <li>1x Packaging Unit</li>
+    <li>1x Shredding Unit</li>
+    <li>1x Fitting Unit</li>
+    <li>1x Protocol Stash</li>
+    <li>1x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2pwrbc.png" alt="Blueprint P2 PWR B/C" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-amr-bc">7. P2 AMR B/C</h3>
+<blockquote>
+    <p><strong>Description:</strong> Grade B/C Gear production<br>
+    <strong>Size:</strong> <code>6 x 13</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1521eo59E8u98eioe</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>ferrium ore</code> + <code>originium ore</code></td><td><code>ferrium component</code></td></tr>
+        <tr><td><code>amethyst ore</code> + <code>originium ore</code></td><td><code>amethyst component</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Refining Unit</li>
+    <li>1x Gearing Unit</li>
+    <li>1x Protocol Stash</li>
+    <li>1x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2amrbc.png" alt="Blueprint P2 AMR B/C" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-med-bc">8. P2 MED B/C</h3>
+<blockquote>
+    <p><strong>Description:</strong> Grade B/C Capsule/Canned Citrome production<br>
+    <strong>Size:</strong> <code>6 x 16</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1602IA6Oai7U3Oa3e</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>ferrium ore</code> + <code>buckflower</code></td><td><code>buck capsule [B]</code></td></tr>
+        <tr><td><code>amethyst ore</code> + <code>buckflower</code></td><td><code>buck capsule [C]</code></td></tr>
+        <tr><td><code>ferrium ore</code> + <code>citrome</code></td><td><code>canned citrome [C]</code></td></tr>
+        <tr><td><code>amethyst ore</code> + <code>citrome</code></td><td><code>canned citrome [C]</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>1x Moulding Unit</li>
+    <li>1x Refining Unit</li>
+    <li>1x Filling Unit</li>
+    <li>1x Protocol Stash</li>
+    <li>1x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2medbc.png" alt="Blueprint P2 MED B/C" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-bmb">9. P2 BMB</h3>
+<blockquote>
+    <p><strong>Description:</strong> Industrial Explosive production<br>
+    <strong>Size:</strong> <code>14 x 9</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1a6G6ea297A4ioe3e</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>amethyst ore</code> + <code>aketine</code></td><td><code>industrial explosive</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>1x Refining Unit</li>
+    <li>1x Fitting Unit</li>
+    <li>1x Packaging Unit</li>
+    <li>1x Shredding Unit</li>
+    <li>1x Protocol Stash</li>
+    <li>1x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2bmb.png" alt="Blueprint P2 BMB" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-pwr-a">10. P2 PWR A</h3>
+<blockquote>
+    <p><strong>Description:</strong> HC Battery production<br>
+    <strong>Size:</strong> <code>16 x 14</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O17l69E7lA256oO2Al</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>ferrium ore</code> + <code>originium ore</code> + <code>sandleaf</code></td><td><code>HC Valley Battery</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Refining Unit</li>
+    <li>1x Fitting Unit</li>
+    <li>3x Shredding Unit</li>
+    <li>1x Packaging Unit</li>
+    <li>2x Grinding Unit</li>
+    <li>2x Thermal Bank</li>
+    <li>2x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2pwra.png" alt="Blueprint P2 PWR A" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-amr-a">11. P2 AMR A</h3>
+<blockquote>
+    <p><strong>Description:</strong> Grade A Gear production<br>
+    <strong>Size:</strong> <code>22 x 10</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1eAo0OeuUE4AuoAl8</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>amethyst ore</code> + <code>originium ore</code> + <code>sandleaf</code></td><td><code>cryston component</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>4x Refining Unit</li>
+    <li>3x Shredding Unit</li>
+    <li>1x Gearing Unit</li>
+    <li>2x Grinding Unit</li>
+    <li>1x Protocol Stash</li>
+    <li>2x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2amra.png" alt="Blueprint P2 AMR A" onerror="this.style.display='none'">
+
+<hr>
+
+<h3 id="p2-med-a">12. P2 MED A</h3>
+<blockquote>
+    <p><strong>Description:</strong> Grade A Capsule/Canned Citrome production<br>
+    <strong>Size:</strong> <code>21 x 10</code></p>
+</blockquote>
+
+<p><strong>Sharing Code:</strong></p>
+<div class="code-wrapper">
+    <pre><code>EF0O1E50U3E14uoe439Ia</code></pre>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+</div>
+
+<p><strong>Production Materials:</strong></p>
+<table>
+    <thead><tr><th>Input</th><th>Output</th></tr></thead>
+    <tbody>
+        <tr><td><code>buckflower</code> + <code>ferrium ore</code> + <code>sandleaf</code></td><td><code>buck capsule [A]</code></td></tr>
+        <tr><td><code>citrome</code> + <code>ferrium ore</code> + <code>sandleaf</code></td><td><code>canned citrome [A]</code></td></tr>
+    </tbody>
+</table>
+
+<p><strong>Facilities Used:</strong></p>
+<ul>
+    <li>2x Refining Unit</li>
+    <li>1x Moulding Unit</li>
+    <li>3x Shredding Unit</li>
+    <li>2x Grinding Unit</li>
+    <li>1x Filling Unit</li>
+    <li>1x Protocol Stash</li>
+    <li>2x Electric Pylon</li>
+</ul>
+
+<img src="pictures/p2meda.png" alt="Blueprint P2 MED A" onerror="this.style.display='none'">
+
+<script>
+    function copyCode(button) {
+        // Find the code element within the same wrapper
+        const wrapper = button.parentElement;
+        const codeElement = wrapper.querySelector('code');
+        const text = codeElement.innerText;
+
+        // Use a temporary textarea to handle copying in various environments
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try {
+            document.execCommand('copy');
+            const originalText = button.innerText;
+            button.innerText = 'Copied!';
+            setTimeout(() => {
+                button.innerText = originalText;
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy', err);
+            button.innerText = 'Error';
+        }
+        
+        document.body.removeChild(textarea);
+    }
+</script>
+
+</body>
+</html>
